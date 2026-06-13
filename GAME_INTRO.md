@@ -2,9 +2,9 @@
 
 ## 中文介绍
 
-**Ticket Deal PC** 是一个受《Deal or No Deal》启发的桌面图形化模拟游戏。玩家每局先支付固定门票 `$100,000`，然后从 26 个箱子中选择自己的箱子，并按照轮次逐步打开其他箱子。每一轮结束后，银行家会根据剩余未打开金额给出报价，玩家可以选择接受报价立即结束游戏，也可以继续开箱。
+**Ticket Deal PC** 是一个受《Deal or No Deal》启发的图形化模拟游戏。玩家每局先支付固定门票 `$100,000`，然后从 26 个箱子中选择自己的箱子，并按照轮次逐步打开其他箱子。每轮结束后，银行家会根据剩余未打开金额给出报价，玩家可以选择接受报价立即结束游戏，也可以选择继续开箱。
 
-这个版本的核心特点是加入了门票成本和主办方收益模型，因此它不仅是一个小游戏，也可以用来观察不同玩家心理策略下的长期收益率。
+这个版本加入了门票成本和主办方收益模型，因此它不仅是一个小游戏，也可以用来观察不同玩家心理策略下的长期收益率。
 
 ### 游戏规则
 
@@ -33,7 +33,7 @@
 银行家报价 = 剩余未打开金额平均值 × 1.19
 ```
 
-这个系数是为了让长期主办方收益率接近 5% 左右而设置的。由于玩家策略、随机分配和开箱过程都会影响结果，实际模拟收益率会围绕目标值波动。
+这个系数用于让主办方长期收益率接近 5% 左右。由于玩家策略、随机分配和开箱过程都会影响结果，实际模拟收益率会围绕目标值波动。
 
 ### 玩家类型模拟
 
@@ -66,13 +66,35 @@
 - 支持运行 `1,000` / `10,000` / `100,000` 局自动模拟。
 - 显示主办方长期平均收益、收益率、Deal 率和分类型玩家收益。
 
-### 运行方式
+### Windows 桌面版运行
 
 ```powershell
 python main.py
 ```
 
-### 打包为 Windows EXE
+已打包的 Windows 可执行文件：
+
+```text
+release/TicketDealPC.exe
+```
+
+### 安卓 APK 下载
+
+安卓版本通过 GitHub Actions 云端构建，不需要本地安装 Flutter。
+
+下载方式：
+
+1. 打开 [Build Flutter APK Actions](https://github.com/Ordoviciancn/Deal-or-not-Deal/actions/workflows/build-flutter-apk.yml)
+2. 选择最新成功的 workflow run
+3. 在页面底部找到 `Artifacts`
+4. 下载 `ticket-deal-release-apk`
+5. 解压后得到 `app-release.apk`
+
+最近一次成功构建：
+
+- [Build Flutter APK run #6](https://github.com/Ordoviciancn/Deal-or-not-Deal/actions/runs/27470685384)
+
+### 本地打包 Windows EXE
 
 ```powershell
 pip install pyinstaller
@@ -82,7 +104,7 @@ pyinstaller --onefile --windowed --name TicketDealPC main.py
 生成文件位于：
 
 ```text
-dist\TicketDealPC.exe
+dist/TicketDealPC.exe
 ```
 
 ---
@@ -153,13 +175,35 @@ Player behavior types:
 - Supports `1,000` / `10,000` / `100,000` game simulations.
 - Shows long-run host profit, host profit rate, Deal rate, and per-player-type profitability.
 
-### Run
+### Run Windows Desktop Version
 
 ```powershell
 python main.py
 ```
 
-### Build Windows EXE
+Packaged Windows executable:
+
+```text
+release/TicketDealPC.exe
+```
+
+### Download Android APK
+
+The Android version is built by GitHub Actions, so a local Flutter SDK is not required.
+
+Download steps:
+
+1. Open [Build Flutter APK Actions](https://github.com/Ordoviciancn/Deal-or-not-Deal/actions/workflows/build-flutter-apk.yml)
+2. Choose the latest successful workflow run
+3. Find `Artifacts` at the bottom of the page
+4. Download `ticket-deal-release-apk`
+5. Unzip it to get `app-release.apk`
+
+Latest successful build:
+
+- [Build Flutter APK run #6](https://github.com/Ordoviciancn/Deal-or-not-Deal/actions/runs/27470685384)
+
+### Build Windows EXE Locally
 
 ```powershell
 pip install pyinstaller
@@ -169,5 +213,5 @@ pyinstaller --onefile --windowed --name TicketDealPC main.py
 The generated executable will be located at:
 
 ```text
-dist\TicketDealPC.exe
+dist/TicketDealPC.exe
 ```
