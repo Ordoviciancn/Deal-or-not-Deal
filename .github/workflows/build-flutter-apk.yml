@@ -33,6 +33,10 @@ jobs:
         working-directory: flutter_android
         run: flutter doctor -v
 
+      - name: Regenerate Android platform
+        working-directory: flutter_android
+        run: flutter create --platforms=android --project-name ticket_deal_simulator .
+
       - name: Install dependencies
         working-directory: flutter_android
         run: flutter pub get
