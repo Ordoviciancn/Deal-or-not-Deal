@@ -47,7 +47,9 @@ jobs:
 
       - name: Regenerate Android platform
         working-directory: flutter_android
-        run: flutter create --platforms=android --project-name ticket_deal_simulator .
+        run: |
+          rm -rf android
+          flutter create --platforms=android --project-name ticket_deal_simulator .
 
       - name: Build release APK
         working-directory: flutter_android
