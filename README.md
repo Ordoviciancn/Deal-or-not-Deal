@@ -22,6 +22,16 @@ The packaged Windows executable is included at:
 release/TicketDealPC.exe
 ```
 
+## Android APK via GitHub Actions
+
+The Flutter Android version is included under:
+
+```text
+flutter_android/
+```
+
+To build an APK without a local Flutter SDK, open the repository on GitHub, go to `Actions`, choose `Build Flutter APK`, run the workflow, then download the `ticket-deal-release-apk` artifact.
+
 ## Build EXE
 
 ```powershell
