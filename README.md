@@ -11,6 +11,11 @@ This repository contains two playable versions:
 
 - [GAME_INTRO.md](GAME_INTRO.md)
 
+## 快速下载 / Quick Download
+
+- **Windows PC**: download or run `release/TicketDealPC.exe`.
+- **Android APK**: open the latest successful [Build Flutter APK](https://github.com/Ordoviciancn/Deal-or-not-Deal/actions/workflows/build-flutter-apk.yml) run and download the `ticket-deal-release-apk` artifact.
+
 ## 版本总览 / Versions
 
 | Version | Platform | Location | How to use |
