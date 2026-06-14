@@ -36,14 +36,14 @@ class GameConfig {
   static const List<int> openingSchedule = [6, 5, 4, 3, 2, 1, 1, 1, 1];
 
   static const List<double> offerDiscounts = [
-    0.35,
-    0.45,
-    0.55,
-    0.65,
-    0.75,
-    0.82,
-    0.88,
-    0.92,
+    1.19,
+    1.19,
+    1.19,
+    1.19,
+    1.19,
+    1.19,
+    1.19,
+    1.19,
   ];
 
   static int get maxPrize => prizePool.last;
