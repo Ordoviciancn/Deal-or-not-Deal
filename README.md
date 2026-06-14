@@ -1,12 +1,26 @@
-# Ticket Deal PC
+# Ticket Deal
 
-Ticket Deal PC is a desktop GUI game simulator inspired by Deal or No Deal. It adds a fixed ticket cost, banker offers, mixed player-behavior simulation, and long-run host-profit statistics.
+Ticket Deal is a game simulator inspired by Deal or No Deal. It adds a fixed ticket cost, banker offers, mixed player-behavior simulation, and long-run host-profit statistics.
+
+This repository contains two playable versions:
+
+- **Windows PC version**: a Python Tkinter desktop GUI app.
+- **Android version**: a Flutter APK built by GitHub Actions.
 
 中文和 English 完整介绍：
 
 - [GAME_INTRO.md](GAME_INTRO.md)
 
+## 版本总览 / Versions
+
+| Version | Platform | Location | How to use |
+| --- | --- | --- | --- |
+| PC desktop | Windows | `release/TicketDealPC.exe` / `main.py` | Run the EXE or run `python main.py` |
+| Android APK | Android phones | GitHub Actions artifact | Download `ticket-deal-release-apk` and install `app-release.apk` |
+
 ## Windows 桌面版 / Windows Desktop Version
+
+PC 版适合在 Windows 上测试完整图形界面和模拟统计功能。
 
 运行源码：
 
@@ -23,6 +37,8 @@ release/TicketDealPC.exe
 ```
 
 ## 安卓 APK / Android APK
+
+安卓版适合安装到安卓手机上试玩。项目源码位于 Flutter 子目录：
 
 Flutter 安卓版本位于：
 
@@ -43,6 +59,8 @@ flutter_android/
 最近一次成功构建：
 
 - [Build Flutter APK run #6](https://github.com/Ordoviciancn/Deal-or-not-Deal/actions/runs/27470685384)
+
+如果 artifact 过期，可以打开 `Actions` 页面重新运行 `Build Flutter APK` workflow。
 
 ## 本地打包 EXE / Build EXE Locally
 

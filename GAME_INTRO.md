@@ -1,10 +1,17 @@
-# Ticket Deal PC / 门票版开箱交易游戏
+# Ticket Deal / 门票版开箱交易游戏
 
 ## 中文介绍
 
-**Ticket Deal PC** 是一个受《Deal or No Deal》启发的图形化模拟游戏。玩家每局先支付固定门票 `$100,000`，然后从 26 个箱子中选择自己的箱子，并按照轮次逐步打开其他箱子。每轮结束后，银行家会根据剩余未打开金额给出报价，玩家可以选择接受报价立即结束游戏，也可以选择继续开箱。
+**Ticket Deal** 是一个受《Deal or No Deal》启发的图形化模拟游戏。玩家每局先支付固定门票 `$100,000`，然后从 26 个箱子中选择自己的箱子，并按照轮次逐步打开其他箱子。每轮结束后，银行家会根据剩余未打开金额给出报价，玩家可以选择接受报价立即结束游戏，也可以选择继续开箱。
 
-这个版本加入了门票成本和主办方收益模型，因此它不仅是一个小游戏，也可以用来观察不同玩家心理策略下的长期收益率。
+项目同时包含 **Windows PC 桌面版** 和 **安卓 APK 版**。PC 版适合在桌面端体验和查看模拟统计；安卓版适合安装到安卓手机上试玩。这个项目加入了门票成本和主办方收益模型，因此它不仅是一个小游戏，也可以用来观察不同玩家心理策略下的长期收益率。
+
+### 版本说明
+
+| 版本 | 平台 | 位置 | 用途 |
+| --- | --- | --- | --- |
+| PC 桌面版 | Windows | `release/TicketDealPC.exe` / `main.py` | 桌面图形界面、模拟统计、快速测试 |
+| 安卓版 | Android | GitHub Actions artifact / `flutter_android/` | 安卓手机安装试玩 |
 
 ### 游戏规则
 
@@ -57,7 +64,8 @@
 
 ### 图形界面功能
 
-- 桌面图形化界面，基于 Python Tkinter。
+- PC 版提供桌面图形化界面，基于 Python Tkinter。
+- 安卓版使用 Flutter 构建，适合安卓手机竖屏体验。
 - 显示 26 个箱子按钮。
 - 显示剩余金额列表。
 - 显示当前轮次、门票成本、玩家选择箱子。
@@ -67,6 +75,8 @@
 - 显示主办方长期平均收益、收益率、Deal 率和分类型玩家收益。
 
 ### Windows 桌面版运行
+
+PC 版可直接运行源码：
 
 ```powershell
 python main.py
@@ -80,7 +90,7 @@ release/TicketDealPC.exe
 
 ### 安卓 APK 下载
 
-安卓版本通过 GitHub Actions 云端构建，不需要本地安装 Flutter。
+安卓版通过 GitHub Actions 云端构建，不需要本地安装 Flutter。
 
 下载方式：
 
@@ -93,6 +103,8 @@ release/TicketDealPC.exe
 最近一次成功构建：
 
 - [Build Flutter APK run #6](https://github.com/Ordoviciancn/Deal-or-not-Deal/actions/runs/27470685384)
+
+如果 artifact 过期，可以重新运行 `Build Flutter APK` workflow。
 
 ### 本地打包 Windows EXE
 
@@ -111,9 +123,16 @@ dist/TicketDealPC.exe
 
 ## English Introduction
 
-**Ticket Deal PC** is a desktop GUI game simulator inspired by *Deal or No Deal*. At the beginning of each game, the player pays a fixed ticket cost of `$100,000`, chooses one personal case, and then opens the remaining cases round by round. After each round, the banker makes an offer based on the remaining unopened prize amounts. The player can accept the offer and end the game, or reject it and continue.
+**Ticket Deal** is a graphical game simulator inspired by *Deal or No Deal*. At the beginning of each game, the player pays a fixed ticket cost of `$100,000`, chooses one personal case, and then opens the remaining cases round by round. After each round, the banker makes an offer based on the remaining unopened prize amounts. The player can accept the offer and end the game, or reject it and continue.
 
-This version adds a ticket-cost mechanism and host-profit model, making it useful not only as a game but also as a long-run profitability simulator under different player behaviors.
+The repository includes both a **Windows PC desktop version** and an **Android APK version**. The PC version is useful for desktop play and simulation statistics, while the Android version is intended for phone installation and testing. This project adds a ticket-cost mechanism and host-profit model, making it useful not only as a game but also as a long-run profitability simulator under different player behaviors.
+
+### Versions
+
+| Version | Platform | Location | Purpose |
+| --- | --- | --- | --- |
+| PC desktop | Windows | `release/TicketDealPC.exe` / `main.py` | Desktop GUI, simulations, quick testing |
+| Android APK | Android | GitHub Actions artifact / `flutter_android/` | Install and play on Android phones |
 
 ### Game Rules
 
@@ -166,7 +185,8 @@ Player behavior types:
 
 ### GUI Features
 
-- Desktop GUI built with Python Tkinter.
+- PC desktop GUI built with Python Tkinter.
+- Android version built with Flutter for portrait phone play.
 - 26 interactive case buttons.
 - Remaining prize amount board.
 - Current round, ticket cost, and selected player case display.
@@ -176,6 +196,8 @@ Player behavior types:
 - Shows long-run host profit, host profit rate, Deal rate, and per-player-type profitability.
 
 ### Run Windows Desktop Version
+
+Run the PC version from source:
 
 ```powershell
 python main.py
@@ -202,6 +224,8 @@ Download steps:
 Latest successful build:
 
 - [Build Flutter APK run #6](https://github.com/Ordoviciancn/Deal-or-not-Deal/actions/runs/27470685384)
+
+If the artifact has expired, rerun the `Build Flutter APK` workflow.
 
 ### Build Windows EXE Locally
 
